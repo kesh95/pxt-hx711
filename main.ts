@@ -20,7 +20,7 @@ namespace hx711 {
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo|unit %unit"
-    export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
+    export function ping(trig: DigitalPin, echo: DigitalPin, unit: SensorUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
@@ -33,8 +33,8 @@ namespace hx711 {
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
         switch (unit) {
-            case PingUnit.Centimeters: return d / 58;
-            case PingUnit.Inches: return d / 148;
+            case SensorUnit.Centimeters: return d / 58;
+            case SensorUnit.Inches: return d / 148;
             default: return d ;
         }
     }
