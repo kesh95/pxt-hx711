@@ -20,7 +20,7 @@ namespace hx711 {
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo|unit %unit"
-    export function ping(trig: DigitalPin, echo: DigitalPin, unit: SensorUnit, maxCmDistance = 500): number {
+    export function ping(SCK_pin: DigitalPin, DT_pin: DigitalPin, unit: SensorUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
