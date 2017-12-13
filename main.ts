@@ -1,16 +1,16 @@
 enum SensorUnit {
-    //% block="μs"
+    //% block="mg"
     MicroSeconds,
-    //% block="cm"
+    //% block="g"
     Centimeters,
-    //% block="inches"
+    //% block="kg"
     Inches
 }
 
 /**
  * Sonar and ping utilities
  */
-//% color="#2c3e50" weight=10
+//% color="#f66618" weight=10
 namespace hx711 {
     /**
      * Send a ping and get the echo time (in microseconds) as a result
@@ -19,7 +19,7 @@ namespace hx711 {
      * @param unit desired conversion unit
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
-    //% blockId=sonar_ping block="sensor SCK %SCK|DT %DT|unit %unit"
+    //% blockId=sonar_ping block="HX711 SCK %SCK|DT %DT|unit %unit"
     export function ping(SCK: DigitalPin, DT: DigitalPin, unit: SensorUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(SCK, PinPullMode.PullNone);
