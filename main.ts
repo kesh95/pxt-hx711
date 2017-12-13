@@ -14,12 +14,12 @@ enum SensorUnit {
 namespace hx711 {
     /**
      * Send a ping and get the echo time (in microseconds) as a result
-     * @param SCK tigger pin
-     * @param DT echo pin
+     * @param SCK SCK pin
+     * @param DT DT pin
      * @param unit desired conversion unit
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
-    //% blockId=sonar_ping block="ping trig %trig|echo %echo|unit %unit"
+    //% blockId=sonar_ping block="sensor SCK %SCK|DT %DT|unit %unit"
     export function ping(SCK: DigitalPin, DT: DigitalPin, unit: SensorUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(SCK, PinPullMode.PullNone);
