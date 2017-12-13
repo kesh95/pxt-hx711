@@ -10,7 +10,7 @@ enum SensorUnit {
 /**
  * Sonar and ping utilities
  */
-//% color="#f66618" weight=10
+//% color="#f66618" weight=10 icon="\uf110"
 namespace hx711 {
     /**
      * Send a ping and get the echo time (in microseconds) as a result
