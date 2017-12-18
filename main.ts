@@ -1,6 +1,6 @@
 enum SensorUnit {
     //% block="mg"
-    MicroSeconds,
+    MicroSeconds,    //edited
     //% block="g"
     Centimeters,
     //% block="kg"
